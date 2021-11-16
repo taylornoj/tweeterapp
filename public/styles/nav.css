@@ -11,3 +11,19 @@ nav {
   font-family: 'Bungee', cursive;
   margin-left: 1em;
 }
+
+.writeNewTweet {
+  margin-left: auto;
+  margin-right: 1em;
+}
+
+.writeHere{
+  padding: 0em;
+  margin-bottom: 5px;
+}
+
+.fa-angle-double-down {
+  display: flex;
+  justify-content: center;
+  color: red;
+}
