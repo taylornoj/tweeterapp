@@ -20,6 +20,10 @@
   font-family: 'Bungee', cursive;
 }
 
+.invalid {
+  color: #FF0000
+}
+
 button {
   color: white;
   background-color: #4056A1;
