@@ -20,7 +20,6 @@
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
     <link rel="stylesheet" href="/styles/tweets.css" type="text/css" />
 
-
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
@@ -30,7 +29,6 @@
     <!-- Character Counter -->
     <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
   </head>
-
   <body>
     
     <!-- Top nav bar (fixed) -->
@@ -49,18 +47,18 @@
       <div>
           <img src="/images/profile-hex.png"> 
       </div>
-      
       <div class="profileName">
           <h2>Taylor</h2>
       </div>
   </header>
 
     <!-- Page-specific (main) content here -->
+
+    <!-- Create New Tweet -->
     <main class="container">
       <section class="new-tweet">
         <!--<h2>Compose Tweet</h2>-->
         <form method="POST" action="/tweets/">
-          
           <label for="tweet-text"><b>What are you humming about?</b></label>
           <textarea name="text" id="tweet-text" rows="1" minlength="1"></textarea>
           <div id="tweet-below">
@@ -70,16 +68,15 @@
         </form>
       </section>
       
-
+    <!-- Posted Tweet One -->
       <article class="tweet">
         <header>
-          <span class="username"><img src="https://www.shareicon.net/data/128x128/2016/03/12/732548_face_512x512.png" alt="">Newton</span>
+          <span class="username"><img src="https://i.imgur.com/73hZDYK.png" alt="">Newton</span>
           <span class="userHandle">@SirIsaac</span>
           </header>
           <div class="tweet-content">
             <p>If I have seen further it is by standing on the shoulders of giants</p>
           </div>
-         
           <footer>
             <p>10 days ago</p>
             <div>
@@ -89,16 +86,16 @@
             </div>
           </footer>
       </article>
-
+    
+      <!-- Posted Tweet Two -->
       <article class="tweet">
         <header>
-          <span class="username"><img src="https://www.shareicon.net/data/128x128/2016/03/12/732553_sunglasses_512x512.png" alt="">Stacey</span>
+          <span class="username"><img src="https://i.imgur.com/v0JXau2.png" alt="">Stacey</span>
           <span class="userHandle">@SpaceyStacey</span>
           </header>
           <div class="tweet-content">
             <p>Hello World!</p>
           </div>
-         
           <footer>
             <p>11 days ago</p>
             <div>
@@ -108,7 +105,6 @@
             </div>
           </footer>
       </article>
-
     </main>
   </body>
 </html>
