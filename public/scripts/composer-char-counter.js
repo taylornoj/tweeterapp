@@ -10,5 +10,5 @@ $(document).ready(() => {
     } else {
       $counter.removeClass("invalid");
     }
-  })
+  });
 });
