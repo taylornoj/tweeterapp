@@ -75,7 +75,13 @@ function createTweetElement (tweetData) {
 
 $(document).ready(function() {
   renderTweets(data);
-  $("#tweet-container").prepend($tweet);
+
+  $("#post-tweet").submit(function (event) {
+    event.preventDefault();
+    console.log("new tweeter!")
+  });
+
+  //$("#tweet-container").prepend($tweet);
 
 });
 
