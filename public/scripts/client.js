@@ -79,6 +79,13 @@ $(document).ready(function() {
   $("#post-tweet").submit(function (event) {
     event.preventDefault();
     console.log("new tweeter!")
+
+    $.ajax("/tweets", {
+      method: "POST",
+      data: $("#post-tweet").serialize()
+    })
+
+
   });
 
   //$("#tweet-container").prepend($tweet);
