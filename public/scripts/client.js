@@ -71,7 +71,7 @@ $(document).ready(function() {
     $.ajax("/tweets", {
       method: "POST",
       data: $("#post-tweet").serialize(),
-      success: () => {loadTweets()}
+      success: () => {loadTweets(), $(".counter").val("140")}
     })
   }  
   });
