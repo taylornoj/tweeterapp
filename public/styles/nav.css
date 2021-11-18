@@ -11,17 +11,16 @@ nav {
 
 .logo {
   font-family: 'Bungee', cursive;
-  margin-left: 1em;
+  padding-left: 1em;
   font-size: xx-large;
 }
 
 .writeNewTweet {
   margin-left: auto;
-  margin-right: 1em;
+  padding-right: 1em;
 }
 
 .writeHere{
-  padding: 0em;
   margin-bottom: 5px;
 }
 

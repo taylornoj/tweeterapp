@@ -35,6 +35,10 @@ body {
    background-color: #f4f1ec;
  }
 
+ /*
+ * Responsive Design 
+ */
+
 @media only screen and (min-width: 1024px) {
   main {
     width: 50%;
@@ -47,12 +51,10 @@ body {
     float: left;
     height: auto;
     margin: 1em 15%;
-    
   }
 
   .header {
     margin-top: 5em;
     width: 30%;
   }
-
  } 

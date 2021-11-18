@@ -5,7 +5,7 @@
  */
 
 //-- Preventing cross-site scripting attacks
-const escape = function (str) {
+const escape = function(str) {
   let div = document.createElement("div");
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
@@ -19,10 +19,10 @@ function renderTweets(tweets) {
     const $tweet = createTweetElement(tweet);
     $('#tweet-container').prepend($tweet);
   }
-};
+}
 
 // -- generating the DOM structure for a tweet
-function createTweetElement (tweetData) {
+function createTweetElement(tweetData) {
   const {user, content, created_at} = tweetData;
   const tweetElementHTML = $(`<article class="tweet">
   <header>
@@ -40,25 +40,25 @@ function createTweetElement (tweetData) {
         <i class="far fa-heart"></i>
       </div>
     </footer>
-</article>`)
+</article>`);
   return tweetElementHTML;
-};
+}
 
 // -- AJAX GET request for newly written tweet
 function loadTweets() {
   $.ajax("/tweets", {
     method: "GET"})
-    .then(function (tweets) {
+    .then(function(tweets) {
       renderTweets(tweets);
-    })
-};
+    });
+}
 
 // -- Handling for new tweet submission
 $(document).ready(function() {
-  $("#post-tweet").submit(function (event) {
+  $("#post-tweet").submit(function(event) {
     event.preventDefault();
 
-     // -- Displaying validation errors if input is invalid, otherwise continuing with client input
+    // -- Displaying validation errors if input is invalid, otherwise continuing with client input
     $("#error-message").slideUp();
     const value = $(this).find("#tweet-text").val();
     if (!value.trim()) {
@@ -68,12 +68,14 @@ $(document).ready(function() {
       $("#error-message")
         .html("🚨 Error! Your Tweet is too long!").slideDown();
     } else {
-    $.ajax("/tweets", {
-      method: "POST",
-      data: $("#post-tweet").serialize(),
-      success: () => {loadTweets(), $(".counter").val("140")}
-    })
-  }  
+      $.ajax("/tweets", {
+        method: "POST",
+        data: $("#post-tweet").serialize(),
+        success: () => {
+          loadTweets(), $(".counter").val("140")
+        }
+      });
+    }
   });
   loadTweets();
 });
