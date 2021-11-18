@@ -4,14 +4,14 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-
-//-- preventing cross-site scripting attacks
+//-- Preventing cross-site scripting attacks
 const escape = function (str) {
   let div = document.createElement("div");
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
 };
 
+// -- Taking in array of tweet objects & rendering them to prepend to #tweets-container
 function renderTweets(tweets) {
   $('#tweet-text').val('');
   $('#tweet-container').empty();
@@ -19,7 +19,7 @@ function renderTweets(tweets) {
     const $tweet = createTweetElement(tweet);
     $('#tweet-container').prepend($tweet);
   }
-}
+};
 
 // -- generating the DOM structure for a tweet
 function createTweetElement (tweetData) {
@@ -49,42 +49,31 @@ function loadTweets() {
   $.ajax("/tweets", {
     method: "GET"})
     .then(function (tweets) {
-      //console.log("success:",tweets)
       renderTweets(tweets);
     })
 };
 
-
-
+// -- Handling for new tweet submission
 $(document).ready(function() {
-  //renderTweets(data);
   $("#post-tweet").submit(function (event) {
     event.preventDefault();
-    console.log("new tweeter!");
 
-
+     // -- Displaying validation errors if input is invalid, otherwise continuing with client input
     $("#error-message").slideUp();
-  
     const value = $(this).find("#tweet-text").val();
-    
-    // -- Displaying validation errors with jQuery
     if (!value.trim()) {
       $("#error-message")
-        .html("🚨 Error! Your message is empty!")
-        .slideDown();
+        .html("🚨 Error! Your message is empty!").slideDown();
     } else if (value.length > 140) {
       $("#error-message")
-        .html("🚨 Error! Your Tweet is too long!")
-        .slideDown();
+        .html("🚨 Error! Your Tweet is too long!").slideDown();
     } else {
-
-
     $.ajax("/tweets", {
       method: "POST",
       data: $("#post-tweet").serialize(),
       success: () => {loadTweets()}
     })
-  }  ////////////////////////////////
+  }  
   });
   loadTweets();
 });

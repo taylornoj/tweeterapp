@@ -17,14 +17,6 @@
   border-bottom: 5px solid #55524d;
 }
 
-.counter {
-  font-family: 'Bungee', cursive;
-}
-
-.invalid {
-  color: #FF0000
-}
-
 button {
   color: white;
   background-color: #4056A1;
@@ -33,6 +25,14 @@ button {
   padding: 0.2em 0.5em;
   border: 0;
   transition: all 0.2s;
+}
+
+.counter {
+  font-family: 'Bungee', cursive;
+}
+
+.invalid {
+  color: #FF0000
 }
 
 #tweet-below {
