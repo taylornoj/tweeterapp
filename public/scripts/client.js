@@ -5,6 +5,7 @@
  */
 
 function renderTweets(tweets) {
+  $('#tweet-text').val('');
   $('#tweet-container').empty();
   for (let tweet of tweets) {
     const $tweet = createTweetElement(tweet);
