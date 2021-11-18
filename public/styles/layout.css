@@ -34,3 +34,25 @@ body {
    margin-right: 5%;
    background-color: #f4f1ec;
  }
+
+@media only screen and (min-width: 1024px) {
+  main {
+    width: 50%;
+    float: right;
+    margin-top: 3em;
+    }
+
+  .header-background {
+    width: 50%;
+    float: left;
+    height: auto;
+    margin: 1em 15%;
+    
+  }
+
+  .header {
+    margin-top: 5em;
+    width: 30%;
+  }
+
+ } 

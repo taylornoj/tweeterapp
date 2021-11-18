@@ -12,6 +12,7 @@ nav {
 .logo {
   font-family: 'Bungee', cursive;
   margin-left: 1em;
+  font-size: xx-large;
 }
 
 .writeNewTweet {
@@ -29,3 +30,4 @@ nav {
   justify-content: center;
   color: red;
 }
+
