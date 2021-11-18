@@ -40,3 +40,13 @@ button {
   justify-content: space-between;
   padding: 0em 0em 1em;
 }
+
+#error-message {
+  border-style: solid;
+  color: #FF0000;
+  background-color: rgba(255, 0, 0, 0.3);
+  border-width: 4px;
+  display: none;
+  padding: 1em;
+  margin-bottom: 1em;
+}

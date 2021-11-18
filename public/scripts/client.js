@@ -55,30 +55,36 @@ function loadTweets() {
 };
 
 
+
 $(document).ready(function() {
   //renderTweets(data);
-
   $("#post-tweet").submit(function (event) {
     event.preventDefault();
     console.log("new tweeter!");
 
-    ////////////////////////////// GET MENTOR CHECK ON THIS:
-    // -- Validate text length before posting
-    const textLength = $(this).children("#tweet-text");
-    if (!textLength.val()) {
-      alert("Your Tweet is Empty!");
-      return false;
-    }
-    if (textLength.val().length > 140) {
-      alert("Your Tweet is too Long!")
-      return false;
-    }
+
+    $("#error-message").slideUp();
+  
+    const value = $(this).find("#tweet-text").val();
+    
+    // -- Displaying validation errors with jQuery
+    if (!value.trim()) {
+      $("#error-message")
+        .html("🚨 Error! Your message is empty!")
+        .slideDown();
+    } else if (value.length > 140) {
+      $("#error-message")
+        .html("🚨 Error! Your Tweet is too long!")
+        .slideDown();
+    } else {
+
 
     $.ajax("/tweets", {
       method: "POST",
       data: $("#post-tweet").serialize(),
       success: () => {loadTweets()}
     })
+  }  ////////////////////////////////
   });
   loadTweets();
 });
