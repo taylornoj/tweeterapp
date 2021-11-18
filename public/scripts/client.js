@@ -4,6 +4,14 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
+
+//-- preventing cross-site scripting attacks
+const escape = function (str) {
+  let div = document.createElement("div");
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+};
+
 function renderTweets(tweets) {
   $('#tweet-text').val('');
   $('#tweet-container').empty();
@@ -22,7 +30,7 @@ function createTweetElement (tweetData) {
     <span class="userHandle">${user.handle}</span>
     </header>
     <div class="tweet-content">
-      <p>${content.text}</p>
+      <p>${escape(content.text)}</p>
     </div>
     <footer>
       <p>${timeago.format(created_at)}</p>
@@ -54,7 +62,7 @@ $(document).ready(function() {
     event.preventDefault();
     console.log("new tweeter!");
 
-    // GET MENTOR CHECK ON THIS:
+    ////////////////////////////// GET MENTOR CHECK ON THIS:
     // -- Validate text length before posting
     const textLength = $(this).children("#tweet-text");
     if (!textLength.val()) {
