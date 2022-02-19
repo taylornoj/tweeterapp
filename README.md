@@ -2,6 +2,9 @@
 
 Tweeter is a simple, single-page Twitter clone that uses HTML, CSS, JS, jQuery, AJAX, as well as Node and Express.  This project is from Lighthouse Labs, designed to help students get comfortable with their front-end skills.
 
+![gif](https://github.com/taylornoj/tweeterapp/blob/master/docs/mock3.gif?raw=true)
+
+
 ## Welcome to Tweeter!
 
 With Tweeter, users can enjoy a responsive design technology so that their Tweeter page looks great on larger desktops or smaller screens.
